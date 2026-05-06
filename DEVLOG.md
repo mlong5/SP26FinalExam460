@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** ____Matthew Long_____
+**Student ID:** ___129916732_____
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,12 +10,16 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [5/5/26]: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+I will type the answer to the problem, then code the problem, then repeat in a consecutive iterative fashion.Though I assume most functions will need to be implemented consecutively and tested for correct return types, if I notice I can solve a question first I will do that. 
+
+I expect part 3b to be slightly difficult as I must review loop invariants and solve carefully. I think part 4 will be the most challenging as it will require me to fully understand the greediness of the algorithm to find a counterexample. 
+
+I plan to test using the given test cases, as well as tweaking each graph slightly if needed for my own test cases.
 
 ---
 
