@@ -32,9 +32,13 @@ def explain_problem():
         Your Part 1 README answers, written as a string.
         Must match what you wrote in README Part 1.
 
-    TODO
     """
-    return "TODO"
+    ans = 'A single shortest path run from S is not sufficient as it cannot decide which path to T uses the least fuel. ' \
+    'It cannot even decide where T is to stop, if it is just a path to the shortest nodes. ' \
+    'The structural decision of the most efficient path to T still remains as we must compare which path has the least fuel.' \
+    'Since there are multiple paths that could end in T, we must find the most optimal path by searching through every path in orders, not just a single computation.'
+
+    return ans
 
 
 # =============================================================================
@@ -72,7 +76,6 @@ def run_dijkstra(graph, source):
     dict[node, float]
         Minimum cost from source to every node in graph.
         Unreachable nodes map to float('inf').
-
     TODO
     """
     pass
