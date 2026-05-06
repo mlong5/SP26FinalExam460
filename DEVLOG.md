@@ -30,6 +30,8 @@ I plan to test using the given test cases, as well as tweaking each graph slight
 
 I changed the plan to be a bit more flexible. Answered Part 1 initially.
 
+Initial answer to select_sources.
+
 ---
 
 ## Entry 3 – [Date]: [Short description]
