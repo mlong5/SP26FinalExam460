@@ -45,11 +45,11 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | dictionary |
+| What the keys represent | valid nodes |
+| What the values represent | distances from source |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Python dictionaries use Hash Maps|
 
 ### Part 2c: Precomputation Complexity
 

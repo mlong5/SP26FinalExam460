@@ -35,11 +35,19 @@ Initial answer to select_sources code. Initial answer to select_sources question
 Initial commits to run_djikstra(). Had to fix the float(inf) issue
 Worked on more of djikstra's and seems to be stable.
 
+Changes to select_sources to better fit README answer
+
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [5/7/26]: [Short description]
 
-_Your entry here._
+Answering distance storage(2b) in README.
+
+Slight changes to the strategy and select_sources().
+
+Started and finished untested precompute_distances().
+Small bug in which formatting was off as each key was appended.
+Fixed it with appending .items().
 
 ---
 

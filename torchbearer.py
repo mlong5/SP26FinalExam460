@@ -62,9 +62,8 @@ def select_sources(spawn, relics, exit_node):
     """
     sources = list()
     sources.append(spawn)
-    sources.extend(relics)
-    sources.append(exit_node)
-    return sources
+    sources.extend(relics) #exit_node is ommitted but may still need to be included?
+    return sources 
 
 
 def run_dijkstra(graph, source):
@@ -122,7 +121,14 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    all_paths = {node2: [] for node2 in graph}
+    valid_sources = select_sources(spawn,relics,exit_node) #list with each of the sources, no exit_node
+    for source in valid_sources:
+        curr_path = run_dijkstra(graph,source)
+        all_paths[source].append(curr_path.items())
+    return all_paths
+
+
 
 
 # =============================================================================
@@ -239,7 +245,7 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
-    print(run_dijkstra(graph,spawn)) #think its good
+    print(precompute_distances(graph,spawn,relics,exit_node)) #think its good
 
 
 # =============================================================================
@@ -272,6 +278,7 @@ def _run_tests():
     assert cost == 5, f"Test 2 FAILED: expected 5, got {cost}"
     print(f"  Test 2 passed  cost={cost}  order={order}")
 
+
     # Test 3: No valid path to exit. Must return (inf, []).
     graph_3 = {
         'S': [('R', 1)],
@@ -285,12 +292,12 @@ def _run_tests():
     # Test 4: Relics reachable only through intermediate rooms.
     # Optimal cost = 6.
     graph_4 = {
-        'S': [('X', 1)],
-        'X': [('R1', 2), ('R2', 5)],
-        'R1': [('Y', 1)],
-        'Y': [('R2', 1)],
-        'R2': [('T', 1)],
-        'T': []
+    'S': [('X', 1)],
+    'X': [('R1', 2), ('R2', 5)],
+    'R1': [('Y', 1)],
+    'Y': [('R2', 1)],
+    'R2': [('T', 1)],
+    'T': []
     }
     cost, order = solve(graph_4, 'S', ['R1', 'R2'], 'T')
     assert cost == 6, f"Test 4 FAILED: expected 6, got {cost}"
@@ -300,7 +307,7 @@ def _run_tests():
     for fn in [explain_problem, dijkstra_invariant_check, explain_search]:
         result = fn()
         assert isinstance(result, str) and result != "TODO" and len(result) > 20, \
-            f"Test 5 FAILED: {fn.__name__} returned placeholder or empty string"
+        f"Test 5 FAILED: {fn.__name__} returned placeholder or empty string"
     print("  Test 5 passed  explanation functions are non-empty")
 
     print("\nAll provided tests passed.")
