@@ -19,7 +19,7 @@ I will type the answer to the problem, then code the problem, then repeat in a c
 
 I expect part 6 to be most difficult as it requires understanding of pruning and I do not understand that one well. I think part 4 will be the most challenging as it will require me to fully understand the greediness of the algorithm to find a counterexample. 
 
-I plan to test using the given test cases, as well as tweaking each graph slightly if needed for my own test cases.
+I plan to test using the given test cases, specifically using solve as a sandbox for all the different functions I want to test and calling functions in solve.
 
 ---
 
@@ -30,7 +30,10 @@ I plan to test using the given test cases, as well as tweaking each graph slight
 
 I changed the plan to be a bit more flexible. Answered Part 1 initially.
 
-Initial answer to select_sources.
+Initial answer to select_sources code. Initial answer to select_sources question.
+
+Initial commits to run_djikstra(). Had to fix the float(inf) issue
+Worked on more of djikstra's and seems to be stable.
 
 ---
 

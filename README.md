@@ -36,8 +36,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Starting or S | We must always record the distance from the start node, since we always use it  |
+| Must Visit or Relic | Since each Relic room must be visited, we must always record the distance |
 
 ### Part 2b: Distance Storage
 
