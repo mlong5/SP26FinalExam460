@@ -15,7 +15,7 @@
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-I will type the answer to the problem, then code the problem, then repeat in a consecutive iterative fashion.Though Yet if I notice I can code a question as a mockup first I will do that in order to have some sort of notes on what I should do.
+I will first try to code the problem, then check if I understand more on the question or vice versa, and then repeat in a consecutive iterative fashion. Though if I notice I can code a question as a mockup first I will do that in order to have some sort of notes on what I should do.
 
 I expect part 6 to be most difficult as it requires understanding of pruning and I do not understand that one well. I think part 4 will be the most challenging as it will require me to fully understand the greediness of the algorithm to find a counterexample. 
 
@@ -23,7 +23,7 @@ I plan to test using the given test cases, specifically using solve as a sandbox
 
 ---
 
-## Entry 2 – [5/6/26]: [Short description]
+## Entry 2 – [5/6/26]: [Djikstra's, select_sources, and General Part 1 and 2 answers]
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
@@ -56,7 +56,11 @@ Fixed it with appending .items().
 Comments for djikstra's. Edited readMe formatting. Edited 2c answer
 Found and fixed bug in precompute_distances() with nodes not being restricted to ones in sources and not all of graphs.
 
+Added descriptions to each of my entries, and made small changes to initial plan. Added new entry for next day
 
+---
+
+## Entry 5 – [5/9/26]: [Short description]
 
 ---
 
