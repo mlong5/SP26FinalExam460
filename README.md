@@ -17,14 +17,14 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  -A single shortest path run from S is not sufficient as it cannot decide which path to T uses the least fuel.
-  -It cannot even decide where T is to stop, if it is just a path to the shortest nodes
+  *A single shortest path run from S is not sufficient as it cannot decide which path to T uses the least fuel.
+  *It cannot even decide where T is to stop, if it is just a path to the shortest nodes
 
 - **What decision remains after all inter-location costs are known:**
-  -The structural decision of the most efficient path to T still remains as we must compare which path has the least fuel.
+  *The structural decision of the most efficient path to T still remains as we must compare which path has the least fuel.
 
 - **Why this requires a search over orders (one sentence):**
-  -Since there are multiple paths that could end in T, we must find the most optimal path by searching through every path in orders, not just a single computation.
+  *Since there are multiple paths that could end in T, we must find the most optimal path by searching through every path in orders, not just a single computation.
 
 ---
 
@@ -55,10 +55,10 @@
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** |M|+1 where M is the set of Relic Rooms, and the + 1 is for the source S.
+- **Cost per run:** Djikstra’s has O(E log V)
+- **Total complexity:** Thus, combined we can say O(|M| * E log |M|)
+- **Justification (one line):** Since Djikstra’s is nested in a loop that runs about |M| times, we multiply the |M| times E log |M| for each Djikstra’s applied to the set M to get O(|M| * E log |M|)
 
 ---
 
