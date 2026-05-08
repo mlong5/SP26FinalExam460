@@ -73,29 +73,45 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  - Only the most minimal, shortest distance from the current source has been recorded in dist[v]
+  - Up-to-date with the smallest distances for vertexes up to v
+
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+ - The distance recorded for nodes from the current source may not yet be the shortest distance
+ - May be infinity, or unreachable, and thus undiscovered
+ - May be just larger than vertex v
+ - The distance, if recorded, comes from a source that is already in S
+
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  - All distances but x to itself are undiscovered and marked with infinity as distance
+  - The start node is most minimal at 0, so the first invariant for vertices in S holds
+  - For all other vertices not in S, they are undiscovered and not yet in dist[u]
+  - There are no discovered distances not in S, so the second invariant holds by nullity
+
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  - For node u not in S, on an iteration, Graph(V,E) has nonnegative edge weights
+  - Thus, distance to u can be minimized by comparing the current nonnegative distance from x to a lesser nonnegative distance of a neighboring path
+  - For the next iteration, the old node u is now in the set S, and treated like v, and is minimal
+  - All other nodes have not yet been discovered so both invariants hold
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  - Since pq is now empty, assume invariants hold for all past nodes. 
+  - Every v in S has been minimized
+  - Every vertex has been discovered
+  - If there is a vertex u not in S, then it is not minimal compared to v, or is unreachable and marked as infinity.
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+- To decide the best route through all relic rooms in set M and node T, we need the most minimal distances to each of the rooms and T.
 
 ---
 

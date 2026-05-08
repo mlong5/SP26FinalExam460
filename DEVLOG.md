@@ -56,7 +56,8 @@ Fixed it with appending .items().
 Comments for djikstra's. Edited readMe formatting. Edited 2c answer
 Found and fixed bug in precompute_distances() with nodes not being restricted to ones in sources and not all of graphs.
 
-Added descriptions to each of my entries, and made small changes to initial plan. Added new entry for next day
+Added descriptions to each of my entries, and made small changes to initial plan. Added new entry for next day.
+Added answers for 3a,3b,3c.
 
 ---
 
