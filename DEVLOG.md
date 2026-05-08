@@ -59,6 +59,8 @@ Found and fixed bug in precompute_distances() with nodes not being restricted to
 Added descriptions to each of my entries, and made small changes to initial plan. Added new entry for next day.
 Added answers for 3a,3b,3c.
 
+Fixed formatting bug for precompute_distances(), Returns a dictionary instead of a list
+
 ---
 
 ## Entry 5 – [5/9/26]: [Short description]

@@ -123,17 +123,18 @@ def precompute_distances(graph, spawn, relics, exit_node):
     """
     
     all_paths = {}
-    all_paths.update({spawn : []})
+    all_paths.update({spawn : {}})
     for node2 in graph:
         if(node2 in relics):
-            all_paths.update({node2 : []})
+            all_paths.update({node2 : {}})
 
     
     #all_paths = {node2: [] for node2 in graph and node2 in relics}
     valid_sources = select_sources(spawn,relics,exit_node) #list with each of the sources, no exit_node
     for source in valid_sources:
         curr_path = run_dijkstra(graph,source)
-        all_paths[source].append(curr_path.items()) #all_paths may return the intermediate nodes, maybe need to change, maybe not
+        print(curr_path)
+        all_paths[source].update(curr_path.items()) #all_paths may return the intermediate nodes, maybe need to change, maybe not
     return all_paths
 
 
@@ -200,6 +201,8 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
     pass
 
 
+    
+
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
              cost_so_far, exit_node, best):
     """
@@ -232,6 +235,8 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     pass
 
 
+
+
 # =============================================================================
 # PIPELINE
 # =============================================================================
@@ -253,7 +258,8 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
-    print(precompute_distances(graph,spawn,relics,exit_node)) #think its good
+    dist_tab = precompute_distances(graph,spawn,relics,exit_node)
+    print(dist_tab) #think its good
 
 
 # =============================================================================
