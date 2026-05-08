@@ -17,14 +17,14 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  *A single shortest path run from S is not sufficient as it cannot decide which path to T uses the least fuel.
-  *It cannot even decide where T is to stop, if it is just a path to the shortest nodes
+  **A single shortest path run from S is not sufficient as it cannot decide which path to T uses the least fuel.
+  **It cannot even decide where T is to stop, if it is just a path to the shortest nodes
 
 - **What decision remains after all inter-location costs are known:**
-  *The structural decision of the most efficient path to T still remains as we must compare which path has the least fuel.
+  **The structural decision of the most efficient path to T still remains as we must compare which path has the least fuel.
 
 - **Why this requires a search over orders (one sentence):**
-  *Since there are multiple paths that could end in T, we must find the most optimal path by searching through every path in orders, not just a single computation.
+    **Since there are multiple paths that could end in T, we must find the most optimal path by searching through every path in orders, not just a single computation.**
 
 ---
 
