@@ -39,7 +39,7 @@ Changes to select_sources to better fit README answer
 
 ---
 
-## Entry 3 – [5/7/26]: [Short description]
+## Entry 3 – [5/7/26]: [Finished precompute_distances()]
 
 Answering distance storage(2b) in README.
 
@@ -51,7 +51,7 @@ Fixed it with appending .items().
 
 ---
 
-## Entry 4 – [5/8/26]: [Short description]
+## Entry 4 – [5/8/26]: [Part 3 answers, Possible part 4 answers, initial _explore() and find_optimal]
 
 Comments for djikstra's. Edited readMe formatting. Edited 2c answer
 Found and fixed bug in precompute_distances() with nodes not being restricted to ones in sources and not all of graphs.
