@@ -89,10 +89,10 @@ def run_dijkstra(graph, source):
     while pq:
         (dist, node) = heapq.heappop(pq)
 
-        if(dist > value[node]):
+        if(dist > value[node]): #if dist from source greater than curr, unhelpful don't use
             continue
 
-        for (nextNode,cost) in graph[node]:
+        for (nextNode,cost) in graph[node]: #if neighbor is more minimal, push onto min heap
             if value[node] + cost < value[nextNode]:
                 value[nextNode] = value[node] + cost
                 heapq.heappush(pq, (value[nextNode], nextNode))
@@ -121,11 +121,19 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    all_paths = {node2: [] for node2 in graph}
+    
+    all_paths = {}
+    all_paths.update({spawn : []})
+    for node2 in graph:
+        if(node2 in relics):
+            all_paths.update({node2 : []})
+
+    
+    #all_paths = {node2: [] for node2 in graph and node2 in relics}
     valid_sources = select_sources(spawn,relics,exit_node) #list with each of the sources, no exit_node
     for source in valid_sources:
         curr_path = run_dijkstra(graph,source)
-        all_paths[source].append(curr_path.items())
+        all_paths[source].append(curr_path.items()) #all_paths may return the intermediate nodes, maybe need to change, maybe not
     return all_paths
 
 

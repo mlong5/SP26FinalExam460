@@ -56,9 +56,9 @@
 > State the total complexity and show the arithmetic. Two to three lines max.
 
 - **Number of Dijkstra runs:** |M|+1 where M is the set of Relic Rooms, and the + 1 is for the source S.
-- **Cost per run:** Djikstra’s has O(E log V)
-- **Total complexity:** Thus, combined we can say O(|M| * E log |M|)
-- **Justification (one line):** Since Djikstra’s is nested in a loop that runs about |M| times, we multiply the |M| times E log |M| for each Djikstra’s applied to the set M to get O(|M| * E log |M|)
+- **Cost per run:** Djikstra’s has O(E log V) since all of the Graph(V,E) must be traversed to minimize distance(even intermediate rooms)
+- **Total complexity:** Thus, combined we can say O(|M| * E log V)
+- **Justification (one line):** Since Djikstra’s is nested in a loop that runs about |M| times, we multiply the |M| times E log V for each Djikstra’s applied to the set M to get O(|M| * E log V)
 
 ---
 
