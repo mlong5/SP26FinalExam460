@@ -24,7 +24,7 @@
   - The structural decision of the most efficient path to T still remains as we must compare which path has the least fuel.
 
 - **Why this requires a search over orders (one sentence):**
-  - Since there are multiple paths that could end in T, we must find the most optimal path by searching through every path in orders, not just a single computation.**
+  - Since there are multiple paths that could end in T, we must find the most optimal path by searching through every path in orders, not just a single computation.
 
 ---
 
@@ -122,17 +122,32 @@
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+| From \ To | B   | C   | D   | T   |
+|-----------|-----|-----|-----|-----|
+| S         | 1   | 4   | inf | --  |
+| B         | 0   | 2   | inf | 1   |
+| C         | inf | --  | 6   | 2   |
+| D         | 1   | inf | inf | 4   |
+
+- **The failure mode:** 
+  - Greedy fails when it chooses S->B instead of S->C since it focuses on immediate local minimums
+- **Counter-example setup:** 
+  - Assume we use the graph above, and we choose the immediate local minimum of cost_so_far.
+  - We choose the immediate minimum relic room from our current source that we have not already visited in our set.
+- **What greedy picks:** 
+  - S -> B -> C -> D -> T, total fuel = 1 + 2 + 6 + 4 = 13
+- **What optimal picks:**
+  - S -> C -> D -> B -> T, total fuel = 4 + 6 + 1 + 1 = 12
+- **Why greedy loses:**
+  - Greedy looks at the most immediate local minimum which is S-> B = 1
+  - Greedy misses out on the path starting with S->C = 4 
+  - The S->C path has a lesser global minimum in the end
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- The optimal algorithm must explore each relic room order of set M to find the most minimal combination.
 
 ---
 

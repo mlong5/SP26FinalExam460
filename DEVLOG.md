@@ -51,7 +51,7 @@ Fixed it with appending .items().
 
 ---
 
-## Entry 4 – [5/8/26]: [Part 3 answers, Possible part 4 answers, initial _explore() and find_optimal]
+## Entry 4 – [5/8/26]: [Part 3 answers]
 
 Comments for djikstra's. Edited readMe formatting. Edited 2c answer
 Found and fixed bug in precompute_distances() with nodes not being restricted to ones in sources and not all of graphs.
@@ -63,7 +63,10 @@ Fixed formatting bug for precompute_distances(), Returns a dictionary instead of
 
 ---
 
-## Entry 5 – [5/9/26]: [Short description]
+## Entry 5 – [5/9/26]: [Part 4 answers]
+
+Edits to headers. Initial part 4 answers typed in ReadME.
+Initial Part 4 Example inserted as a table
 
 ---
 
