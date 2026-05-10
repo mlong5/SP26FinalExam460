@@ -77,6 +77,12 @@ Initial algorithm continues for too long. Changed graph 3 to check a certain edg
 
 Added fixed "pruning" for a certain value which helps in _explore(). Will have to redo later
 
+Decided to code a for loop to get rid of duplicates since there is a certain edge case bug 
+where the function returns the right cost but there are duplicates.
+
+Additionally, decided to keep the addition of fixed node T and its cost outside of the explore()
+and only in find_optimal_path(). The cost is updated outside and put in cost2 variable.
+
 ---
 
 ## Entry 5 – [Date]: Post-Implementation Reflection

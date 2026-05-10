@@ -212,10 +212,16 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
     _explore(dist_table, spawn, rel_rem, rel_order, cost, exit_node, best)
     
     print(best)
-    print(cost)
+
+    for i in range(1, len(best)-1):
+       if(best[i] == best[i-1]):
+           best.pop(i-1)
 
     #have to find cost outside i guess
-    cost2 = dist_table[best[-1]][exit_node]
+    best.extend(exit_node)
+    print(best)
+
+    cost2 = 0
     v1 = spawn
     for v2 in best:
         if(v2 != spawn):
@@ -259,15 +265,13 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     #visited = []
     #visited.append(current_loc)
     if(cost_so_far + dist_table[current_loc][exit_node] >= 5):
-      return
-
+            return
     if( not relics_remaining and exit_node in dist_table[current_loc]): #check if current path is too long
             #print(relics_visited_order)
             best.extend(relics_visited_order)
-            best.extend(exit_node)
             #relics_visited_order.clear()
             cost_so_far = cost_so_far + dist_table[current_loc][exit_node]
-            print(cost_so_far)
+            #print(cost_so_far)
             return 
     
     for v in dist_table[current_loc]:
@@ -280,7 +284,7 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
 
             _explore(dist_table, v, relics_remaining, relics_visited_order, cost_so_far, exit_node, best)
 
-            '''' if not relics_visited_order:
+            '''if not relics_visited_order:
                 return'''
 
             #heapq.heappop(relics_visited_order)
