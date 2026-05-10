@@ -75,6 +75,8 @@ Initial Part 4 Example inserted as a table
 Skipped part 5 readMe to see if I could code _explore() and print_optimal_path well. 
 Initial algorithm continues for too long. Changed graph 3 to check a certain edge case
 
+Added fixed "pruning" for a certain value which helps in _explore(). Will have to redo later
+
 ---
 
 ## Entry 5 – [Date]: Post-Implementation Reflection

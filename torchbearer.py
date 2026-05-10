@@ -258,6 +258,8 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     """
     #visited = []
     #visited.append(current_loc)
+    if(cost_so_far + dist_table[current_loc][exit_node] >= 5):
+      return
 
     if( not relics_remaining and exit_node in dist_table[current_loc]): #check if current path is too long
             #print(relics_visited_order)
