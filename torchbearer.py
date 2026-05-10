@@ -127,13 +127,16 @@ def precompute_distances(graph, spawn, relics, exit_node):
     for node2 in graph:
         if(node2 in relics):
             all_paths.update({node2 : {}})
-
-    
+        '''lis2 = graph[node2]
+        for item in lis2:
+            if item[0] == spawn:
+                graph[node2].remove(item)'''
     #all_paths = {node2: [] for node2 in graph and node2 in relics}
     valid_sources = select_sources(spawn,relics,exit_node) #list with each of the sources, no exit_node
     for source in valid_sources:
         curr_path = run_dijkstra(graph,source)
-        print(curr_path)
+        if(curr_path[source] == 0):
+            del curr_path[source]
         all_paths[source].update(curr_path.items()) #all_paths may return the intermediate nodes, maybe need to change, maybe not
     return all_paths
 
@@ -198,10 +201,31 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
-    pass
 
+    #print(dist_table['S'].keys())
 
+    rel_order = []
+    #maybe instead make it an array that uses a subset every time
+    rel_rem = set(relics)
+    best = [spawn]
+    cost = 0
+    _explore(dist_table, spawn, rel_rem, rel_order, cost, exit_node, best)
     
+    print(best)
+    print(cost)
+
+    #have to find cost outside i guess
+    cost2 = dist_table[best[-1]][exit_node]
+    v1 = spawn
+    for v2 in best:
+        if(v2 != spawn):
+            cost2 += dist_table[v1][v2]
+            v1 = v2
+            if(v1 == 'T'):
+                break
+    print(cost2)
+        
+
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
              cost_so_far, exit_node, best):
@@ -232,9 +256,38 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
+    #visited = []
+    #visited.append(current_loc)
+
+    if( not relics_remaining and exit_node in dist_table[current_loc]): #check if current path is too long
+            #print(relics_visited_order)
+            best.extend(relics_visited_order)
+            best.extend(exit_node)
+            #relics_visited_order.clear()
+            cost_so_far = cost_so_far + dist_table[current_loc][exit_node]
+            print(cost_so_far)
+            return 
+    
+    for v in dist_table[current_loc]:
+        if (v in relics_remaining and dist_table[current_loc][v] != float('inf')):
+
+            #heapq.heappush(relics_visited_order,(dist_table[current_loc][v],v))
+            relics_remaining.remove(v) 
+            relics_visited_order.append(v)
+            cost_so_far += dist_table[current_loc][v]
+
+            _explore(dist_table, v, relics_remaining, relics_visited_order, cost_so_far, exit_node, best)
+
+            '''' if not relics_visited_order:
+                return'''
+
+            #heapq.heappop(relics_visited_order)
+            relics_remaining.add(v)
+            relics_visited_order.remove(v)
+            cost_so_far -= dist_table[current_loc][v]
 
 
+#maybe relics visisted order is a min heap
 
 
 # =============================================================================
@@ -259,7 +312,8 @@ def solve(graph, spawn, relics, exit_node):
     TODO
     """
     dist_tab = precompute_distances(graph,spawn,relics,exit_node)
-    print(dist_tab) #think its good
+    print(dist_tab)
+    print(find_optimal_route(dist_tab,spawn,relics,exit_node)) 
 
 
 # =============================================================================
@@ -296,10 +350,11 @@ def _run_tests():
     # Test 3: No valid path to exit. Must return (inf, []).
     graph_3 = {
         'S': [('R', 1)],
-        'R': [],
+        'R': [('R2',1),('T',1)],
+        'R2': [('R',1)],
         'T': []
     }
-    cost, order = solve(graph_3, 'S', ['R'], 'T')
+    cost, order = solve(graph_3, 'S', ['R','R2'], 'T')
     assert cost == float('inf'), f"Test 3 FAILED: expected inf, got {cost}"
     print(f"  Test 3 passed  cost={cost}")
 

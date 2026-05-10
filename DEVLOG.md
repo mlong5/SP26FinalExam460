@@ -70,6 +70,13 @@ Initial Part 4 Example inserted as a table
 
 ---
 
+## Entry 6 – [5/9/26]: [Initial part 5 code answer]
+
+Skipped part 5 readMe to see if I could code _explore() and print_optimal_path well. 
+Initial algorithm continues for too long. Changed graph 3 to check a certain edge case
+
+---
+
 ## Entry 5 – [Date]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
