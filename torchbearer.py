@@ -209,17 +209,62 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
     rel_rem = set(relics)
     best = [spawn]
     cost = 0
-    _explore(dist_table, spawn, rel_rem, rel_order, cost, exit_node, best)
-    
-    print(best)
 
-    for i in range(1, len(best)-1):
-       if(best[i] == best[i-1]):
-           best.pop(i-1)
+   
+    
+    rowSum = 0
+    mini = float('inf')
+    for src in dist_table:
+        #print(dist_table[src])
+        reduceR = min(dist_table[src].values())
+        #print(reduceR)
+        rowSum += reduceR
+        for dist in dist_table[src]:
+            dist_table[src][dist] -= reduceR
+    
+    
+    colSum = 0
+    mini2 = float('inf')
+    for j, node in enumerate(list(dist_table.values())):
+        print(node)
+        #print(node)
+        #mini2 = float('inf')
+        for i,src2 in enumerate(list(dist_table.keys())):
+            print(src2)
+            
+    #print(colSum)
+        
+            
+
+
+
+
+    #print(rowSum)
+    #print('here2')
+        
+            
+    
+
+    _explore(dist_table, spawn, rel_rem, rel_order, cost, exit_node, best)
+   
+    if(rel_order and rel_order[-1] == '@'):
+        rel_order.pop(-1)
+        rel_order.clear()
+    
+    #rel_rem = set(relics)
+    #if(best and best[-1] != exit_node):
+        #_explore(dist_table, best[-1], rel_rem, rel_order, cost, exit_node, best)
+    #print(best)
+    
+    for i in range(0, len(best)-2):
+       if(best[i] == best[i+1]):
+           best.pop(i)
 
     #have to find cost outside i guess
     best.extend(exit_node)
+
     print(best)
+    
 
     cost2 = 0
     v1 = spawn
@@ -227,10 +272,19 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
         if(v2 != spawn):
             cost2 += dist_table[v1][v2]
             v1 = v2
-            if(v1 == 'T'):
+            if(v1 == exit_node):
                 break
-    print(cost2)
+    #print(cost2)
         
+def bound(cost, current_list):
+    if(cost == 0):
+        cost = float('inf')
+        return cost
+    for key in current_list:
+        if current_list[key] < cost:
+            cost = current_list[key]
+            return cost
+
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
@@ -264,33 +318,41 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     """
     #visited = []
     #visited.append(current_loc)
-    if(cost_so_far + dist_table[current_loc][exit_node] >= 5):
-            return
-    if( not relics_remaining and exit_node in dist_table[current_loc]): #check if current path is too long
-            #print(relics_visited_order)
-            best.extend(relics_visited_order)
-            #relics_visited_order.clear()
-            cost_so_far = cost_so_far + dist_table[current_loc][exit_node]
-            #print(cost_so_far)
-            return 
+
+    
+
+    
+    if( not relics_remaining): #check if current path is too long
+        #print(relics_visited_order)
+        best.extend(relics_visited_order)
+        #relics_visited_order.append('@')
+        cost_so_far = cost_so_far + dist_table[current_loc][exit_node]
+        #print(cost_so_far)
+        return 
+    if( dist_table[current_loc][exit_node] != float('inf') and cost_so_far >= 3):
+        print(bound(cost_so_far, dist_table[current_loc]))
+        return 
     
     for v in dist_table[current_loc]:
-        if (v in relics_remaining and dist_table[current_loc][v] != float('inf')):
-
+        print()
+        if (v in relics_remaining and v not in relics_visited_order and dist_table[current_loc][v] != float('inf')):
             #heapq.heappush(relics_visited_order,(dist_table[current_loc][v],v))
+
             relics_remaining.remove(v) 
             relics_visited_order.append(v)
             cost_so_far += dist_table[current_loc][v]
 
+            print(relics_visited_order)
+
             _explore(dist_table, v, relics_remaining, relics_visited_order, cost_so_far, exit_node, best)
 
-            '''if not relics_visited_order:
-                return'''
-
+            if relics_visited_order[-1] == '@':
+                return
             #heapq.heappop(relics_visited_order)
             relics_remaining.add(v)
             relics_visited_order.remove(v)
             cost_so_far -= dist_table[current_loc][v]
+
 
 
 #maybe relics visisted order is a min heap
@@ -355,8 +417,8 @@ def _run_tests():
 
     # Test 3: No valid path to exit. Must return (inf, []).
     graph_3 = {
-        'S': [('R', 1)],
-        'R': [('R2',1),('T',1)],
+        'S': [('R',1)],
+        'R': [ ('T', 1), ('R2',1)],
         'R2': [('R',1)],
         'T': []
     }

@@ -70,7 +70,7 @@ Initial Part 4 Example inserted as a table
 
 ---
 
-## Entry 6 – [5/9/26]: [Initial part 5 code answer]
+## Entry 6 – [5/10/26]: [Initial part 5 code answer]
 
 Skipped part 5 readMe to see if I could code _explore() and print_optimal_path well. 
 Initial algorithm continues for too long. Changed graph 3 to check a certain edge case
@@ -82,6 +82,19 @@ where the function returns the right cost but there are duplicates.
 
 Additionally, decided to keep the addition of fixed node T and its cost outside of the explore()
 and only in find_optimal_path(). The cost is updated outside and put in cost2 variable.
+
+Made a little change to if need to not have to prune an infinite branch as it will be added and be infinite anyway.
+Then can make if statement to just return empty array
+
+## Entry 7 – [5/11/26]: [Part 5 Code Additions]
+
+Added a bound function as an idea that maybe if I vary with bounds I can prune better.
+Realized it was better to just implement the bounding in find_optimal path as that will call anyway.
+
+Used a cited video to find more info on how to generate the bound, as is being done in find_optimal_path()
+
+Experimented with ways to make _explore work for one cycle or continue with cycling. 
+
 
 ---
 
