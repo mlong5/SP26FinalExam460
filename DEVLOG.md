@@ -94,11 +94,20 @@ Realized it was better to just implement the bounding in find_optimal path as th
 Used a cited video to find more info on how to generate the bound, as is being done in find_optimal_path()
 
 Experimented with ways to make _explore work for one cycle or continue with cycling. 
+---
+
+## Entry 8 – [5/13/26]: [Part 3 and Part 4 Answer Strings, bounding function finalized]
+
+Added multilple bounding function methods that are commented now and may be removed later. 
+Bounding does not have to be optimized so now it is just about making a good method.
+
+Part 3 and Part 4 strings were finally setup to be released in each respective method. 
+Table is not returned for Part 4 since I think it only wanted strings.
 
 
 ---
 
-## Entry 5 – [Date]: Post-Implementation Reflection
+## Entry 8 – [Date]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
