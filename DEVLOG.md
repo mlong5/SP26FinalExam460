@@ -109,19 +109,21 @@ which is hardcoded.
 
 Edge cases checking for disconnected relic graphs from exit_node. 
 
-Comments made for understanding
+Comments made for demonstrating understanding
 
+Answer for 5a, answer for 5b and according changes to torchbearer.py(to show usage of variable names)
 
 
 
 ---
 
-## Entry 9 – [Date]: Post-Implementation Reflection
+## Entry 8 – [Date]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
 
-_Your entry here._
+
+
 
 ---
 
@@ -131,12 +133,12 @@ _Your entry here._
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | 3 |
-| Part 2: Precomputation Design | 1 |
-| Part 3: Algorithm Correctness | 1 |
-| Part 4: Search Design | 1 |
+| Part 1: Problem Analysis | |
+| Part 2: Precomputation Design |  |
+| Part 3: Algorithm Correctness |  |
+| Part 4: Search Design |   |
 | Part 5: State and Search Space |  |
-| Part 6: Pruning | |
-| Part 7: Implementation | 36 |
-| README and DEVLOG writing | 8 |
-| **Total** | |
+| Part 6: Pruning |  |
+| Part 7: Implementation |  |
+| README and DEVLOG writing |  |
+| **Total** |  |

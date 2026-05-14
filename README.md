@@ -160,9 +160,9 @@
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | cur_location | int | each relic room source(has its own path) that should be recursively explored with _explore |
+| Relics already collected | relics_visited_order | list | an ordered list of the relic rooms of an optimal path(pop on relics queue) |
+| Fuel cost so far | cost_so_far | int | Has the cost of the current relic room path and checks if it is minimal to become optimal cost|
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -170,18 +170,20 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | set |
+| Operation: check if relic already collected | Time complexity: O(1) set check|
+| Operation: mark a relic as collected | Time complexity: O(1) set removal |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) set addition |
+| Why this structure fits | The set uses hashing to have short removal and addition which I use for indicating whether or not I want to backtrack over certain pathing attempts|
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:**
+  - Worst-case
+- **Why:** 
+  - 
 
 ---
 

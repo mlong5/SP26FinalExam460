@@ -271,13 +271,14 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
     rel_order = []
     best = [spawn]
     cost = 0
+    rel_rem = set(relics)
 
-    #we use relics since already in a list format, which is following a queue ADT
+    #we use rel_rem since sets have better removal and addition time complexity
 
     if(disconnectCheck(dist_table,relics,exit_node)):
         return (float('inf'), [])
 
-    _explore(dist_table, spawn, relics, rel_order, cost, exit_node, best) #initial call to start backtracking
+    _explore(dist_table, spawn, rel_rem, rel_order, cost, exit_node, best) #initial call to start backtracking
 
     #some cases require cycling and have correct distance calculations
     #but start again at the same point(wrong path order calculation)
@@ -361,7 +362,7 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
             
 
             #remove the info as we were wrong and need to keep backtracking
-            relics_remaining.append(v)
+            relics_remaining.add(v)
             relics_visited_order.remove(v)
             cost_so_far -= dist_table[current_loc][v]
 
