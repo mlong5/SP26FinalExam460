@@ -116,6 +116,8 @@ Answer for 5a, answer for 5b and according changes to torchbearer.py(to show usa
 Added sources. Video is to explain branch and bound concepts. 
 Python dictionary and other methods were referenced by the other articles.
 
+Answers for 6a, 6b, and 6c. Most of my understanding comes from trial and error but also the video linked in references
+
 
 ---
 

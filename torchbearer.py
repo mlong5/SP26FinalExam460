@@ -210,7 +210,7 @@ def explain_search():
 # =============================================================================
 
 
-def bound2(dist_table, relics, exit_node):
+def bound2(dist_table, relics):
     bound = 3
     maxi = float('-inf')
     if(relics == ['B','C','D']):
@@ -220,13 +220,10 @@ def bound2(dist_table, relics, exit_node):
             if(dist_table[lis][adj] > maxi):
                 maxi = dist_table[lis][adj]
 
-        #for adj in dist_table[lis]:
-            
-            #if(adj not in relics or adj != 'S' or adj != exit_node):
-                #bound = 5
+    
     for lis2 in dist_table:
         for adj2 in dist_table[lis2]:
-            if(dist_table[lis2][adj2] == maxi):
+            if(dist_table[lis2][adj2] > maxi):
                 bound = maxi
                 break
     return bound
@@ -340,7 +337,7 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     #we prune that branch by deciding to return early. 
     #This stops a larger recursive call on the recursive stack and keeps only the most minimal recursive call which is optimal 
     #as the most minimal call will not be short-circuited by the pruning if-statement
-    if(dist_table[current_loc][exit_node] != float('inf') and cost_so_far >= bound2(dist_table, getRelics(dist_table), exit_node)):  
+    if(dist_table[current_loc][exit_node] != float('inf') and cost_so_far >= bound2(dist_table, getRelics(dist_table))):  
         return
     if( not relics_remaining): #if we've gone through one path, pop from the queue
         best.extend(relics_visited_order)

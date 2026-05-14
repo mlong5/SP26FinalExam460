@@ -193,23 +193,36 @@
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** 
+  - cost_so_far tracks the cost of the current candidate relic path combination
+- **When it is used:** 
+  - To short-circuit a return on all unoptimal paths in the dist_table
+- **What it allows the algorithm to skip:** 
+  - Now the algorithm does not have to exhaust every option in backtracking 
+  - There is a faster return on unhelpful recursive calls
+  - Instead only minimal paths are explore as unoptimal paths are pruned
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** 
+  - dist_table info is taken to get a whole picture
+  - The total relics are taken to iterate over to find a calculated bound
+  - The cost_so_far is current compared against the bound which varies for each different graph.
+- **What the lower bound accounts for:** 
+  - Makes sure relics_visited_order paths' cost_so_far are not larger than a certain point
+  - If the cost_so_far is greater than the relics_visited_order path then it is too large and unhelpful
+- **Why it never overestimates:** 
+  - Since the lower bound is calculated precisely, cut paths are always unhelpful
+  - The lower bound varies for different graphs so it knows when some graphs need a cut over others
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- Since bounding only cuts off non-optimal paths, pruning will never even touch the optimal path in the if statement
+- Optimal paths surviving and being represented is a byproduct of the non-optimal paths being cut off
 
 ---
 
