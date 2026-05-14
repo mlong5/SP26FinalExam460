@@ -211,10 +211,11 @@ def explain_search():
 
 
 def bound2(dist_table, relics):
-    bound = 3
+    bound = 6
     maxi = float('-inf')
     if(relics == ['B','C','D']):
         return 4
+    
     for lis in dist_table:
         for adj in dist_table[lis]:
             if(dist_table[lis][adj] > maxi):
