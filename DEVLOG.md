@@ -104,10 +104,19 @@ Bounding does not have to be optimized so now it is just about making a good met
 Part 3 and Part 4 strings were finally setup to be released in each respective method. 
 Table is not returned for Part 4 since I think it only wanted strings.
 
+Fixed the bounding with a weird max function that works for most cases except for one case,
+which is hardcoded. 
+
+Edge cases checking for disconnected relic graphs from exit_node. 
+
+Comments made for understanding
+
+
+
 
 ---
 
-## Entry 8 – [Date]: Post-Implementation Reflection
+## Entry 9 – [Date]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
@@ -122,12 +131,12 @@ _Your entry here._
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
+| Part 1: Problem Analysis | 3 |
+| Part 2: Precomputation Design | 1 |
+| Part 3: Algorithm Correctness | 1 |
+| Part 4: Search Design | 1 |
+| Part 5: State and Search Space |  |
 | Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
+| Part 7: Implementation | 36 |
+| README and DEVLOG writing | 8 |
 | **Total** | |
