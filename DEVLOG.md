@@ -118,31 +118,47 @@ Python dictionary and other methods were referenced by the other articles.
 
 Answers for 6a, 6b, and 6c. Most of my understanding comes from trial and error but also the video linked in references
 
+---
+
+## Entry 9 – [5/14/26]: [Finishing touches]
+
+Small check to change bounding
+
+Final push with reflection and time estimate(may need more formatting pushes but yeah)
+
 
 ---
 
-## Entry 8 – [Date]: Post-Implementation Reflection
+## Entry 8 – [5/14/26]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
 
+I would try and optimize the bounding equation if I had more time. There is a video that I reference
+which provides matrices to make the bounding work for most cases. It requires minimizing matrices which would be
+interesting to implement with more time. I instead was only able to have a pseudo function for some graphs with a bound
 
+I also would have liked to double check the cycling cases which I did not get to see much of for the actual cases given here.
+
+Ultimately, I thought this project tied in the concepts of backtracking really well. 
+Yet I do think the prompts were a tad bit too vague. But that's just my reflection. Matt out.
 
 
 ---
 
-## Final Entry – [Date]: Time Estimate
+
+## Final Entry – [5/14/26]: Time Estimate
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design |  |
-| Part 3: Algorithm Correctness |  |
-| Part 4: Search Design |   |
-| Part 5: State and Search Space |  |
-| Part 6: Pruning |  |
-| Part 7: Implementation |  |
-| README and DEVLOG writing |  |
-| **Total** |  |
+| Part 1: Problem Analysis | 3 |
+| Part 2: Precomputation Design | 1 |
+| Part 3: Algorithm Correctness | 1 |
+| Part 4: Search Design | 1 |
+| Part 5: State and Search Space | 2 |
+| Part 6: Pruning | 2 |
+| Part 7: Implementation | 36 |
+| README and DEVLOG writing | 8 |
+| **Total** | 54 |
