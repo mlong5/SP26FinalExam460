@@ -181,9 +181,9 @@
 > Two bullets.
 
 - **Worst-case number of orders considered:**
-  - Worst-case
+  - Worst-case is O(ck) with c being a constant for the amount of branches and k = |M| 
 - **Why:** 
-  - 
+  - There could be more than one state branch of a viable path which requires more than one exploration of the |M| nodes in the relic room set of M.
 
 ---
 
@@ -217,4 +217,6 @@
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- https://www.youtube.com/watch?v=1FEP_sNb62k
+- https://www.geeksforgeeks.org/python/time-complexities-of-python-dictionary/
+- https://www.w3schools.com/PYTHON/ref_list_extend.asp
