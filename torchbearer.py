@@ -82,7 +82,7 @@ def run_dijkstra(graph, source):
     value = {node1: float('inf') for node1 in graph}
     value[source] = 0
 
-    pq = []
+    pq = [] #min heap implementation from heapq
     heapq.heappush(pq, (0, source))
     
     while pq:
@@ -98,7 +98,7 @@ def run_dijkstra(graph, source):
     return value
 
 
-#access pq and change the pq priority if needed
+
 
 
 
@@ -135,7 +135,7 @@ def precompute_distances(graph, spawn, relics, exit_node):
         curr_path = run_dijkstra(graph,source)
         if(curr_path[source] == 0):
             del curr_path[source]
-        all_paths[source].update(curr_path.items()) #all_paths may return the intermediate nodes, maybe need to change, maybe not
+        all_paths[source].update(curr_path.items()) #all_paths may return the intermediate nodes, but this may be needed for future calculations
     return all_paths
 
 
