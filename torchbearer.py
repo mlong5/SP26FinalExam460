@@ -18,7 +18,6 @@ Submit this file as: torchbearer.py
 """
 
 import heapq
-import copy
 
 # =============================================================================
 # PART 1
@@ -119,7 +118,6 @@ def precompute_distances(graph, spawn, relics, exit_node):
         Nested structure supporting dist_table[u][v] lookups
         for every source u your design requires.
 
-    TODO
     """
     
     all_paths = {}
