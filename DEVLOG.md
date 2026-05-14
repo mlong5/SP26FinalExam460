@@ -114,6 +114,7 @@ Comments made for demonstrating understanding
 Answer for 5a, answer for 5b and according changes to torchbearer.py(to show usage of variable names)
 
 Added sources. Video is to explain branch and bound concepts. 
+Python dictionary and other methods were referenced by the other articles.
 
 
 ---
